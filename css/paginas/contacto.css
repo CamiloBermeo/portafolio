@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Página Contacto - Portafolio Juan Camilo Bermeo
+   Estilos de formulario accesible y tarjetas de canales directos de contacto
+   ========================================================================== */
+
+.contacto-canales-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 576px) {
+  .contacto-canales-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tarjeta-canal-contacto {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: var(--transicion-suave);
+  text-decoration: none;
+}
+
+.tarjeta-canal-contacto:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-borde-hover);
+  box-shadow: var(--sombra-glow);
+}
+
+.canal-contacto-icono {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #818cf8;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.canal-contacto-icono.whatsapp {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #22c55e;
+}
+
+.canal-contacto-icono.email {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.25);
+  color: #60a5fa;
+}
+
+.canal-contacto-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.canal-contacto-etiqueta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-texto-apagado);
+}
+
+.canal-contacto-valor {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+/* Tarjeta del Formulario */
+.tarjeta-formulario-contacto {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 18px;
+  padding: 2.25rem;
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.campo-etiqueta {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.45rem;
+  display: block;
+}
+
+.campo-control {
+  background: rgba(8, 8, 17, 0.8);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: var(--transicion-rapida);
+}
+
+.campo-control:focus {
+  outline: none;
+  border-color: var(--color-acento-morado);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+  background: rgba(8, 8, 17, 1);
+  color: #ffffff;
+}
+
+.campo-control::placeholder {
+  color: #475569;
+}
+
+.alerta-mensaje-enviado {
+  display: none;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid #22c55e;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #86efac;
+  font-size: 0.95rem;
+  margin-top: 1.25rem;
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ponte en contacto con Juan Camilo Bermeo Diaz para oportunidades laborales, colaboraciones y proyectos de software backend.">
+  <title>Contáctame | Juan Camilo Bermeo</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CDN Oficial -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons CDN Oficial -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Devicon CDN Oficial para logos de tecnologías -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Hojas de Estilos Propias -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/paginas/contacto.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Barra de Navegación Superior Fija
+       ======================================================================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg barra-navegacion" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand logo-marca" href="index.html" aria-label="Ir al inicio">
+          J<span class="logo-punto">.</span>
+        </a>
+
+        <button class="navbar-toggler boton-menu-movil d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Alternar menú de navegación">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuNavegacion">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion" href="sobre-mi.html">Sobre mí</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion" href="proyectos.html">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion" href="skills.html">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion activo" aria-current="page" href="contacto.html">Contáctame</a>
+            </li>
+          </ul>
+
+          <div class="d-flex justify-content-center mt-3 mt-lg-0">
+            <a href="contacto.html" class="boton-primario boton-cta-nav">
+              Hablemos
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================================
+       Contenido Principal
+       ======================================================================== -->
+  <main class="seccion-espaciado" style="padding-top: 7rem;">
+    <div class="container">
+      <!-- Encabezado de la Sección -->
+      <div class="seccion-encabezado">
+        <span class="seccion-subtitulo">Conversemos</span>
+        <h1 class="seccion-titulo">Ponte en <span class="texto-gradiente">Contacto</span></h1>
+        <p class="texto-secundario" style="max-width: 650px;">
+          ¿Tienes una propuesta laboral, proyecto en mente o consulta técnica? Estoy disponible para conversar y colaborar.
+        </p>
+      </div>
+
+      <div class="row gy-5">
+        <!-- Columna Izquierda: Canales Directos de Comunicación -->
+        <div class="col-lg-5">
+          <h2 class="h3 text-white mb-4">Canales Directos</h2>
+          
+          <div class="contacto-canales-grid">
+            <!-- Canal WhatsApp -->
+            <a href="#" class="tarjeta-canal-contacto" data-red="whatsapp">
+              <div class="canal-contacto-icono whatsapp">
+                <i class="bi bi-whatsapp"></i>
+              </div>
+              <div class="canal-contacto-info">
+                <span class="canal-contacto-etiqueta">WhatsApp Directo</span>
+                <span class="canal-contacto-valor">+57 322 673 3253</span>
+              </div>
+            </a>
+
+            <!-- Canal Correo -->
+            <a href="#" class="tarjeta-canal-contacto" data-red="email">
+              <div class="canal-contacto-icono email">
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <div class="canal-contacto-info">
+                <span class="canal-contacto-etiqueta">Correo Electrónico</span>
+                <span class="canal-contacto-valor" data-texto="email">bermeocamilo12@gmail.com</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Tarjeta de Ubicación y Disponibilidad -->
+          <div class="p-4 mb-4" style="background: var(--color-superficie); border: 1px solid var(--color-borde); border-radius: 14px;">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="canal-contacto-icono">
+                <i class="bi bi-geo-alt-fill text-info"></i>
+              </div>
+              <div>
+                <span class="canal-contacto-etiqueta d-block">Ubicación Residencial</span>
+                <span class="text-white fw-bold">Cali, Valle del Cauca — Colombia</span>
+              </div>
+            </div>
+            <p class="texto-secundario mb-0" style="font-size: 0.9rem;">
+              Disponible para puestos remotos a nivel nacional e internacional, y esquemas híbridos en Cali.
+            </p>
+          </div>
+
+          <!-- Redes Sociales Profesionales -->
+          <h3 class="h5 text-white mb-3">Perfiles Profesionales</h3>
+          <div class="d-flex gap-3">
+            <a href="#" class="boton-secundario" data-red="linkedin">
+              <i class="bi bi-linkedin me-1"></i> LinkedIn
+            </a>
+            <a href="#" class="boton-secundario" data-red="github">
+              <i class="bi bi-github me-1"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Formulario Accesible de Envío de Mensaje -->
+        <div class="col-lg-7">
+          <div class="tarjeta-formulario-contacto">
+            <h2 class="h3 text-white mb-2">Envíame un Mensaje</h2>
+            <p class="texto-secundario mb-4">
+              Completa el formulario y se abrirá tu aplicación de correo preconfigurada con los datos listos para el envío.
+            </p>
+
+            <form id="formulario-contacto" novalidate>
+              <div class="row g-3">
+                <!-- Campo Nombre -->
+                <div class="col-md-6">
+                  <label for="campo-nombre" class="campo-etiqueta">Tu Nombre *</label>
+                  <input type="text" id="campo-nombre" name="nombre" class="campo-control" placeholder="Ej. Ana Gómez" required>
+                </div>
+
+                <!-- Campo Correo -->
+                <div class="col-md-6">
+                  <label for="campo-correo" class="campo-etiqueta">Tu Correo Electrónico *</label>
+                  <input type="email" id="campo-correo" name="correo" class="campo-control" placeholder="ana@ejemplo.com" required>
+                </div>
+
+                <!-- Campo Asunto -->
+                <div class="col-12">
+                  <label for="campo-asunto" class="campo-etiqueta">Asunto *</label>
+                  <input type="text" id="campo-asunto" name="asunto" class="campo-control" placeholder="Ej. Propuesta laboral Desarrollador Backend" required>
+                </div>
+
+                <!-- Campo Mensaje -->
+                <div class="col-12">
+                  <label for="campo-mensaje" class="campo-etiqueta">Mensaje *</label>
+                  <textarea id="campo-mensaje" name="mensaje" rows="5" class="campo-control" placeholder="Escribe aquí tu mensaje o los detalles del proyecto..." required></textarea>
+                </div>
+
+                <!-- Botón de Envío -->
+                <div class="col-12 mt-4">
+                  <button type="submit" class="boton-primario w-100 py-3">
+                    <i class="bi bi-send-fill me-2"></i> Enviar Mensaje
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Alerta visual de confirmación -->
+            <div id="alerta-exito" class="alerta-mensaje-enviado" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i>
+              ¡Gracias! Redirigiendo a tu cliente de correo para enviar tu mensaje...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       Pie de Página Unificado
+       ======================================================================== -->
+  <footer class="pie-pagina">
+    <div class="container">
+      <div class="pie-pagina-contenido">
+        <div>
+          <a class="logo-marca mb-2 d-inline-block" href="index.html">
+            J<span class="logo-punto">.</span>
+          </a>
+          <p class="texto-secundario mb-0" style="max-width: 320px; font-size: 0.9rem;">
+            Juan Camilo Bermeo Diaz • Desarrollador Backend Java Junior con pasión por el software limpio y escalable.
+          </p>
+        </div>
+
+        <ul class="pie-pagina-links">
+          <li><a href="index.html" class="pie-pagina-link">Inicio</a></li>
+          <li><a href="sobre-mi.html" class="pie-pagina-link">Sobre mí</a></li>
+          <li><a href="proyectos.html" class="pie-pagina-link">Proyectos</a></li>
+          <li><a href="skills.html" class="pie-pagina-link">Skills</a></li>
+          <li><a href="contacto.html" class="pie-pagina-link">Contacto</a></li>
+        </ul>
+
+        <p class="pie-pagina-copyright">
+          &copy; <span id="anio-actual"></span> Juan Camilo Bermeo. Cali, Colombia.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts oficiales -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Lógica de envío accesible del formulario de contacto -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const formulario = document.getElementById("formulario-contacto");
+      const alertaExito = document.getElementById("alerta-exito");
+
+      if (formulario) {
+        formulario.addEventListener("submit", (evento) => {
+          evento.preventDefault();
+
+          const nombre = document.getElementById("campo-nombre").value.trim();
+          const correo = document.getElementById("campo-correo").value.trim();
+          const asunto = document.getElementById("campo-asunto").value.trim();
+          const mensaje = document.getElementById("campo-mensaje").value.trim();
+
+          if (!nombre || !correo || !asunto || !mensaje) {
+            alert("Por favor completa todos los campos requeridos.");
+            return;
+          }
+
+          // Construcción del enlace mailto con datos codificados
+          const cuerpoCorreo = `Nombre: ${nombre}%0D%0ACorreo de contacto: ${correo}%0D%0A%0D%0AMensaje:%0D%0A${encodeURIComponent(mensaje)}`;
+          const enlaceMailto = `mailto:${ENLACES_REDES.email}?subject=${encodeURIComponent(asunto)}&body=${cuerpoCorreo}`;
+
+          if (alertaExito) {
+            alertaExito.style.display = "block";
+          }
+
+          setTimeout(() => {
+            window.location.href = enlaceMailto;
+          }, 800);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

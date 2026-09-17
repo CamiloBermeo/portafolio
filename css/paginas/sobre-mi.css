@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Página Sobre Mí - Portafolio Juan Camilo Bermeo
+   Estilos específicos de biografía, línea de tiempo, educación y certificaciones
+   ========================================================================== */
+
+.tarjeta-perfil-bio {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: var(--sombra-tarjeta);
+  margin-bottom: 3rem;
+}
+
+.tarjeta-perfil-bio p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.tarjeta-perfil-bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* Fila de pilares o principios de trabajo */
+.pilares-ingenieria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.tarjeta-pilar {
+  background: rgba(17, 19, 34, 0.65);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  padding: 1.75rem;
+  transition: var(--transicion-suave);
+}
+
+.tarjeta-pilar:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-borde-hover);
+  box-shadow: var(--sombra-glow);
+}
+
+.pilar-icono {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.25rem;
+}
+
+.pilar-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.pilar-descripcion {
+  font-size: 0.9rem;
+  color: var(--color-texto-secundario);
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* Línea de Tiempo de Educación y Certificaciones */
+.linea-tiempo {
+  position: relative;
+  padding-left: 2.25rem;
+}
+
+.linea-tiempo::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-acento-azul), var(--color-acento-morado), transparent);
+}
+
+.item-linea-tiempo {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.item-linea-tiempo:last-child {
+  margin-bottom: 0;
+}
+
+.nodo-linea-tiempo {
+  position: absolute;
+  left: -2.25rem;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-fondo);
+  border: 3px solid var(--color-acento-morado);
+  box-shadow: 0 0 10px var(--color-acento-morado);
+}
+
+.item-linea-tiempo-contenido {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: var(--transicion-rapida);
+}
+
+.item-linea-tiempo-contenido:hover {
+  border-color: var(--color-borde-hover);
+}
+
+.item-linea-tiempo-periodo {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.35rem;
+}
+
+.item-linea-tiempo-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.item-linea-tiempo-institucion {
+  font-size: 0.95rem;
+  color: var(--color-texto-secundario);
+  margin: 0;
+}
+
+/* Tarjeta de Idiomas */
+.tarjeta-idiomas {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+
+.idioma-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.idioma-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.idioma-nombre {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.idioma-nivel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}

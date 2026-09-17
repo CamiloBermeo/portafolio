@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyectos de software desarrollados por Juan Camilo Bermeo: Sistemas backend en Java con Spring Boot, Arquitectura Hexagonal y Docker.">
+  <title>Proyectos | Juan Camilo Bermeo</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CDN Oficial -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons CDN Oficial -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Devicon CDN Oficial para logos de tecnologías -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Hojas de Estilos Propias -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/paginas/proyectos.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Barra de Navegación Superior Fija
+       ======================================================================== -->
+  <header>
+    <nav class="navbar navbar-expand-lg barra-navegacion" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand logo-marca" href="index.html" aria-label="Ir al inicio">
+          J<span class="logo-punto">.</span>
+        </a>
+
+        <button class="navbar-toggler boton-menu-movil d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Alternar menú de navegación">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuNavegacion">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion" href="sobre-mi.html">Sobre mí</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion activo" aria-current="page" href="proyectos.html">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion" href="skills.html">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link enlace-navegacion" href="contacto.html">Contáctame</a>
+            </li>
+          </ul>
+
+          <div class="d-flex justify-content-center mt-3 mt-lg-0">
+            <a href="contacto.html" class="boton-primario boton-cta-nav">
+              Hablemos
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========================================================================
+       Contenido Principal
+       ======================================================================== -->
+  <main class="seccion-espaciado" style="padding-top: 7rem;">
+    <div class="container">
+      <!-- Encabezado de la Sección -->
+      <div class="seccion-encabezado">
+        <span class="seccion-subtitulo">Portafolio Técnico</span>
+        <h1 class="seccion-titulo">Mis <span class="texto-gradiente">Proyectos</span></h1>
+        <p class="texto-secundario" style="max-width: 650px;">
+          Soluciones de software construidas con foco en calidad arquitectónica, principios SOLID y rendimiento. Haz clic en cualquier tarjeta para ver las especificaciones técnicas completas.
+        </p>
+      </div>
+
+      <!-- Banner Informativo / Métricas de Proyectos -->
+      <div class="proyectos-resumen-banner">
+        <div>
+          <h2 class="h4 text-white mb-1">Arquitecturas Limpias y Enfoque de Producción</h2>
+          <p class="texto-secundario mb-0">
+            Proyectos reales con separación de dominio, migraciones de base de datos controladas y seguridad stateless.
+          </p>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <div class="text-md-end">
+            <span class="proyectos-contador texto-gradiente">2</span>
+            <small class="text-secondary d-block" style="font-size: 0.8rem; text-transform: uppercase;">Proyectos Clave</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid Dinámico de Proyectos (Inyectado por js/proyectos.js) -->
+      <div class="row g-3" id="contenedor-proyectos-galeria">
+        <!-- Tarjetas renderizadas dinámicamente desde data/proyectos.json -->
+      </div>
+
+      <!-- Bloque Call to Action hacia GitHub -->
+      <div class="tarjeta-github-cta">
+        <i class="bi bi-github" aria-hidden="true"></i>
+        <h3 class="h4 text-white mb-1">¿Deseas inspeccionar el código fuente?</h3>
+        <p class="texto-secundario mb-3" style="max-width: 500px;">
+          Todos los repositorios con commits descriptivos, ramas de feature y pruebas están disponibles en mi perfil de GitHub.
+        </p>
+        <a href="#" class="boton-primario" data-red="github">
+          <i class="bi bi-box-arrow-up-right me-1"></i> Explorar GitHub
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       Modal Accesible de Especificaciones Técnicas del Proyecto
+       ======================================================================== -->
+  <div class="modal fade modal-proyecto-fondo" id="modalDetalleProyecto" tabindex="-1" aria-labelledby="modalProyectoTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content modal-proyecto-contenido">
+        <div class="modal-proyecto-cabecera">
+          <div>
+            <h2 class="modal-title h4 mb-0 text-white" id="modalProyectoTitulo">Título del Proyecto</h2>
+            <small class="texto-secundario" id="modalProyectoSubtitulo">Subtítulo</small>
+          </div>
+          <button type="button" class="modal-proyecto-cerrar" data-bs-dismiss="modal" aria-label="Cerrar ventana modal">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
+        <div class="modal-proyecto-cuerpo">
+          <div class="modal-proyecto-meta-grid">
+            <div>
+              <div class="modal-proyecto-meta-item-etiqueta">Periodo</div>
+              <div class="modal-proyecto-meta-item-valor" id="modalProyectoPeriodo">-</div>
+            </div>
+            <div>
+              <div class="modal-proyecto-meta-item-etiqueta">Rol Desempeñado</div>
+              <div class="modal-proyecto-meta-item-valor" id="modalProyectoRol">-</div>
+            </div>
+          </div>
+
+          <h3 class="h5 text-white mb-2">Descripción General</h3>
+          <p id="modalProyectoDescripcion" class="texto-secundario mb-4"></p>
+
+          <h3 class="h5 text-white mb-2">Aportes y Especificaciones Técnicas</h3>
+          <ul class="modal-proyecto-lista-items" id="modalProyectoCaracteristicas"></ul>
+
+          <h3 class="h5 text-white mb-2">Stack de Tecnologías</h3>
+          <div id="modalProyectoStack" class="mb-4"></div>
+
+          <div class="pt-3 border-top border-secondary border-opacity-25">
+            <a href="#" id="modalProyectoBtnRepo" target="_blank" rel="noopener noreferrer" class="boton-primario">
+              <i class="bi bi-github me-1"></i> Ver Repositorio
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Pie de Página Unificado
+       ======================================================================== -->
+  <footer class="pie-pagina">
+    <div class="container">
+      <div class="pie-pagina-contenido">
+        <div>
+          <a class="logo-marca mb-2 d-inline-block" href="index.html">
+            J<span class="logo-punto">.</span>
+          </a>
+          <p class="texto-secundario mb-0" style="max-width: 320px; font-size: 0.9rem;">
+            Juan Camilo Bermeo Diaz • Desarrollador Backend Java Junior con pasión por el software limpio y escalable.
+          </p>
+        </div>
+
+        <ul class="pie-pagina-links">
+          <li><a href="index.html" class="pie-pagina-link">Inicio</a></li>
+          <li><a href="sobre-mi.html" class="pie-pagina-link">Sobre mí</a></li>
+          <li><a href="proyectos.html" class="pie-pagina-link">Proyectos</a></li>
+          <li><a href="skills.html" class="pie-pagina-link">Skills</a></li>
+          <li><a href="contacto.html" class="pie-pagina-link">Contacto</a></li>
+        </ul>
+
+        <p class="pie-pagina-copyright">
+          &copy; <span id="anio-actual"></span> Juan Camilo Bermeo. Cali, Colombia.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts oficiales -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <script src="js/proyectos.js"></script>
+</body>
+</html>
