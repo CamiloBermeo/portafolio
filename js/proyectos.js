@@ -90,10 +90,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /**
- * Funcion principal para obtener el JSON de proyectos y disparar el renderizado.
- * Usa BASE_URL para construir la ruta al JSON de forma absoluta y robusta.
+ * Inyecta tarjetas skeleton en un contenedor de proyectos mientras se carga el JSON.
+ * @param {string} idContenedor - ID del div donde se muestran las tarjetas
+ * @param {number} cantidad - Cuántas tarjetas skeleton mostrar
  */
+function mostrarSkeletonEnContenedor(idContenedor, cantidad) {
+  const contenedor = document.getElementById(idContenedor);
+  if (!contenedor) return;
+
+  const skeletonHTML = `
+    <div class="col-12 col-sm-6 col-xl-4 mb-3 tarjeta-skeleton-col">
+      <div class="tarjeta-skeleton-card" aria-hidden="true">
+        <div class="tarjeta-skeleton-imagen"></div>
+        <div class="tarjeta-skeleton-cuerpo">
+          <div class="tarjeta-skeleton-linea tarjeta-skeleton-titulo"></div>
+          <div class="tarjeta-skeleton-linea tarjeta-skeleton-subtitulo"></div>
+          <div class="tarjeta-skeleton-linea tarjeta-skeleton-desc1"></div>
+          <div class="tarjeta-skeleton-linea tarjeta-skeleton-desc2"></div>
+          <div class="tarjeta-skeleton-linea tarjeta-skeleton-badge"></div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  contenedor.innerHTML = skeletonHTML.repeat(cantidad);
+}
+
 async function inicializarProyectos() {
+  // Mostrar skeletons inmediatamente mientras se carga el JSON
+  mostrarSkeletonEnContenedor("contenedor-proyectos-destacados", 2);
+  mostrarSkeletonEnContenedor("contenedor-proyectos-galeria", 3);
+
   try {
     const respuesta = await fetch(`${BASE_URL}data/proyectos.json`);
     if (!respuesta.ok) {
@@ -106,10 +133,11 @@ async function inicializarProyectos() {
     proyectosCargados = PROYECTOS_PREDETERMINADOS;
   }
 
-  // Renderizar segun la pagina actual
+  // Renderizar segun la pagina actual (reemplaza los skeletons)
   renderizarProyectosDestacados();
   renderizarGaleriaCompleta();
 }
+
 
 /**
  * Renderiza los proyectos destacados en la pagina de inicio (index.html).
@@ -195,7 +223,11 @@ function crearHTMLTarjetaProyecto(proyecto) {
     <div class="col-12 col-sm-6 col-xl-4 mb-3">
       <article class="tarjeta-proyecto" data-id-proyecto="${escaparHTML(proyecto.id)}" tabindex="0" role="button" aria-label="Ver detalles de ${escaparHTML(proyecto.titulo)}">
         <div class="tarjeta-proyecto-imagen-contenedor">
-          <img src="${escaparHTML(proyecto.imagen)}" alt="Captura del proyecto ${escaparHTML(proyecto.titulo)}" class="tarjeta-proyecto-imagen" loading="lazy">
+          <img src="${escaparHTML(proyecto.imagen)}"
+               alt="Captura del proyecto ${escaparHTML(proyecto.titulo)}"
+               class="tarjeta-proyecto-imagen"
+               loading="lazy"
+               onerror="this.onerror=null;this.src='${BASE_URL}assets/img/img-placeholder.svg';this.classList.add('img-fallback-proyecto');">
         </div>
         <div class="tarjeta-proyecto-cuerpo">
           <div class="tarjeta-proyecto-icono-titulo">
@@ -263,7 +295,8 @@ function construirCarruselImagenes(proyecto) {
       <div class="modal-proyecto-carrusel">
         <img src="${escaparHTML(listaImagenes[0])}"
              alt="Vista del proyecto ${escaparHTML(proyecto.titulo)}"
-             class="modal-proyecto-carrusel-img-unica">
+             class="modal-proyecto-carrusel-img-unica"
+             onerror="this.onerror=null;this.src='${BASE_URL}assets/img/img-placeholder.svg';this.classList.add('img-fallback-proyecto');">
       </div>
     `;
   }
@@ -278,12 +311,13 @@ function construirCarruselImagenes(proyecto) {
     </button>
   `).join("");
 
-  // Items del carrusel
+  // Items del carrusel con fallback en caso de imagen rota
   const items = listaImagenes.map((src, i) => `
     <div class="carousel-item ${i === 0 ? 'active' : ''}">
       <img src="${escaparHTML(src)}"
            alt="Vista ${i + 1} del proyecto ${escaparHTML(proyecto.titulo)}"
-           class="modal-proyecto-carrusel-img">
+           class="modal-proyecto-carrusel-img"
+           onerror="this.onerror=null;this.src='${BASE_URL}assets/img/img-placeholder.svg';this.classList.add('img-fallback-proyecto');">
     </div>
   `).join("");
 
@@ -329,10 +363,14 @@ function abrirModalEspecificaciones(idProyecto) {
     if (instanciaCarruselAnterior) instanciaCarruselAnterior.dispose();
   }
 
-  // Inyectar carrusel de imagenes en el contenedor del modal
+  // Mostrar skeleton del carrusel mientras se construye el HTML
   const contenedorCarrusel = document.getElementById("modalProyectoCarrusel");
   if (contenedorCarrusel) {
-    contenedorCarrusel.innerHTML = construirCarruselImagenes(proyecto);
+    contenedorCarrusel.innerHTML = '<div class="carrusel-skeleton" aria-hidden="true"></div>';
+    // Usar requestAnimationFrame para que el skeleton se pinte antes del carrusel real
+    requestAnimationFrame(() => {
+      contenedorCarrusel.innerHTML = construirCarruselImagenes(proyecto);
+    });
   }
 
   // Actualizar campos de texto del modal

@@ -529,3 +529,130 @@
   font-size: 0.85rem;
   margin: 0;
 }
+
+/* --------------------------------------------------------------------------
+   Skeleton Loading — Placeholders animados mientras se carga el contenido
+   -------------------------------------------------------------------------- */
+
+/* Animación shimmer base: fondo que se desplaza de izquierda a derecha */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+/* Clase base para cualquier bloque skeleton */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #111322 25%,
+    #1a1f3e 50%,
+    #111322 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 6px;
+}
+
+/* Tarjeta skeleton: imita el layout de .tarjeta-proyecto */
+.tarjeta-skeleton-col {
+  padding: 0 0.5rem;
+}
+
+.tarjeta-skeleton-card {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--borde-radio-tarjeta);
+  overflow: hidden;
+}
+
+/* Imagen placeholder de la tarjeta */
+.tarjeta-skeleton-imagen {
+  width: 100%;
+  padding-top: 48%;
+  background: linear-gradient(
+    90deg,
+    #111322 25%,
+    #1a1f3e 50%,
+    #111322 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* Cuerpo de la tarjeta skeleton */
+.tarjeta-skeleton-cuerpo {
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+/* Líneas de texto skeleton */
+.tarjeta-skeleton-linea {
+  height: 12px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #111322 25%,
+    #1a1f3e 50%,
+    #111322 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+.tarjeta-skeleton-titulo   { width: 65%; height: 16px; }
+.tarjeta-skeleton-subtitulo{ width: 40%; }
+.tarjeta-skeleton-desc1    { width: 100%; }
+.tarjeta-skeleton-desc2    { width: 88%; }
+.tarjeta-skeleton-badge    { width: 30%; height: 20px; border-radius: 20px; margin-top: 0.4rem; }
+
+/* Skeleton de foto de perfil circular */
+.perfil-skeleton {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    #111322 25%,
+    #1a1f3e 50%,
+    #111322 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* Skeleton del carrusel dentro del modal */
+.carrusel-skeleton {
+  width: 100%;
+  height: 260px;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(
+    90deg,
+    #111322 25%,
+    #1a1f3e 50%,
+    #111322 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* --------------------------------------------------------------------------
+   Fallback de imagen rota — se aplica via JS con onerror
+   -------------------------------------------------------------------------- */
+
+/* Imagen de proyecto que falló al cargar */
+.img-fallback-proyecto {
+  object-fit: contain !important;
+  padding: 1.5rem;
+  background: #0d0f1a !important;
+  filter: opacity(0.5);
+}
+
+/* Foto de perfil que falló al cargar */
+.img-fallback-perfil {
+  object-fit: contain !important;
+  background: #111322 !important;
+}
+
