@@ -62,12 +62,18 @@ function aplicarEnlacesConfigurados() {
 }
 
 /**
- * Configura los botones de descarga de CV con la ruta del archivo y atributo download.
+ * Configura los botones de descarga de CV con la ruta absoluta del archivo.
+ * Usa document.baseURI para construir una URL que funcione en local y en deploy
+ * sin importar si el sitio esta en la raiz o en una subcarpeta (ej. /portafolio/).
  */
 function configurarDescargaCV() {
+  // Calcular URL base del documento (eliminar nombre del HTML si existe)
+  const base = document.baseURI.replace(/\/[^/]*\.html(\?.*)?$/, "/");
+  const urlCV = new URL(ARCHIVO_CV, base).href;
+
   const botonesCV = document.querySelectorAll("[data-cv-descarga]");
   botonesCV.forEach(boton => {
-    boton.setAttribute("href", ARCHIVO_CV);
+    boton.setAttribute("href", urlCV);
     boton.setAttribute("download", "CV-Juan-Camilo-Bermeo.pdf");
   });
 }

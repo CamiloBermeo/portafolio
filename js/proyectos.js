@@ -1,4 +1,4 @@
-﻿
+
 // Datos de respaldo predeterminados (para garantizar funcionamiento cuando se abre via file://)
 const PROYECTOS_PREDETERMINADOS = [
   {
@@ -69,23 +69,39 @@ const PROYECTOS_PREDETERMINADOS = [
 // Variable de estado local con los proyectos obtenidos del JSON
 let proyectosCargados = [];
 
+/**
+ * Calcula la URL base del sitio a partir de la ubicacion del documento HTML.
+ * Garantiza que las rutas de assets funcionen tanto en local como en GitHub Pages
+ * independientemente de si el sitio esta en la raiz (/) o en una subcarpeta (/portafolio/).
+ * Ejemplo: "https://camilobermeo.github.io/portafolio/" -> base = esa URL
+ */
+function obtenerBaseURL() {
+  // window.location.href del documento HTML actual es siempre la fuente correcta
+  const url = new URL(window.location.href);
+  // Eliminar el nombre del archivo HTML si existe (index.html, proyectos.html, etc.)
+  url.pathname = url.pathname.replace(/\/[^/]*\.html$/, "/").replace(/\/$/, "") + "/";
+  return url.origin + url.pathname;
+}
+
+const BASE_URL = obtenerBaseURL();
+
 document.addEventListener("DOMContentLoaded", () => {
   inicializarProyectos();
 });
 
 /**
  * Funcion principal para obtener el JSON de proyectos y disparar el renderizado.
+ * Usa BASE_URL para construir la ruta al JSON de forma absoluta y robusta.
  */
 async function inicializarProyectos() {
   try {
-    const respuesta = await fetch("data/proyectos.json");
+    const respuesta = await fetch(`${BASE_URL}data/proyectos.json`);
     if (!respuesta.ok) {
       throw new Error(`Error HTTP al cargar proyectos: ${respuesta.status}`);
     }
     proyectosCargados = await respuesta.json();
   } catch (error) {
-    // Si fetch falla (por ejemplo, al abrir el archivo directamente con protocolo file://),
-    // se activan los datos predeterminados de respaldo.
+    // Si fetch falla (protocolo file:// sin servidor), se usan los datos de respaldo.
     console.warn("Cargando proyectos desde respaldo local:", error.message);
     proyectosCargados = PROYECTOS_PREDETERMINADOS;
   }

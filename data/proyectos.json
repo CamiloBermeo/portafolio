@@ -3,23 +3,24 @@
     "id": "faster-envios",
     "titulo": "Faster Envios",
     "subtitulo": "Sistema de Gestion Logistica",
-    "periodo": "2025 - Presente",
+    "periodo": "2025 - 2026",
     "rol": "Desarrollador Full-Stack (Enfoque Backend)",
     "destacado": true,
-    "imagen": "assets/img/proyecto-faster-envios.svg",
+    "imagen": "assets/img/fasterenvios1.png",
     "imagenes": [
-      "assets/img/faster-envios-1.svg",
-      "assets/img/faster-envios-2.svg",
-      "assets/img/faster-envios-3.svg"
+      "assets/img/fasterenvios2.png",
+      "assets/img/fasterenvios3.png",
+      "assets/img/fasterenvios4.png",
+      "assets/img/fasterenvios5.png"
     ],
     "descripcionCorta": "Plataforma para gestion y seguimiento de envios con arquitectura hexagonal, autenticacion JWT stateless y entorno dockerizado.",
-    "descripcionCompleta": "Plataforma Full-Stack disenada para la administracion y trazabilidad integral de envios. El backend esta construido en Java con Spring Boot bajo los principios de Arquitectura Hexagonal, desacoplando completamente la logica de negocio del dominio de los adaptadores de infraestructura y persistencia. El frontend complementario fue desarrollado en React con Vite y Tailwind CSS para proporcionar una experiencia de usuario rapida y reactiva.",
+    "descripcionCompleta": "Plataforma Full-Stack disenada para la administracion y trazabilidad integral de envios. El backend esta construido en Java con Spring Boot bajo los principios de Arquitectura Hexagonal, desacoplando completamente la logica de negocio del dominio de los adaptadores de infraestructura y persistencia. El frontend fue desarrollado en React con Vite y Tailwind CSS.",
     "caracteristicasClave": [
       "Diseno e implementacion de autenticacion stateless mediante Spring Security y tokens JWT, incorporando filtros de seguridad personalizados y control de acceso basado en roles.",
       "Separacion estricta de capas (dominio, aplicacion e infraestructura) empleando DTOs, Mappers y el patron Builder para garantizar la inmutabilidad y la integridad de datos.",
       "Modelado relacional robusto en MySQL utilizando Spring Data JPA y versionado evolutivo del esquema con migraciones automatizadas en Flyway.",
-      "Containerizacion completa de la aplicacion y servicios auxiliares con Docker para asegurar consistencia entre entornos.",
-      "Documentacion interactiva de la API con Swagger / OpenAPI para estandarizar contratos de servicio y facilitar el consumo desde el cliente."
+      "Containerizacion completa con Docker para asegurar consistencia entre entornos.",
+      "Documentacion interactiva de la API con Swagger / OpenAPI para estandarizar contratos de servicio."
     ],
     "stack": [
       "Java", "Spring Boot", "Spring Security", "JWT",
@@ -27,7 +28,7 @@
       "Swagger / OpenAPI", "React", "Vite", "Tailwind CSS"
     ],
     "tags": ["Java", "Spring Boot", "MySQL", "Docker", "React"],
-    "enlaceRepositorio": "https://github.com/bermeocamilo12",
+    "enlaceRepositorio": "https://github.com/CamiloBermeo/fasterEnvios",
     "enlaceDemo": "#"
   },
   {
@@ -37,18 +38,20 @@
     "periodo": "2024 - 2025",
     "rol": "Responsable del Modulo Backend",
     "destacado": true,
-    "imagen": "assets/img/proyecto-flight-on-time.svg",
+    "imagen": "assets/img/flight-on-time5.jpg",
     "imagenes": [
-      "assets/img/flight-on-time-1.svg",
-      "assets/img/flight-on-time-2.svg"
+      "assets/img/flight-on-time1.jpg",
+      "assets/img/flight-on-time2.jpg",
+      "assets/img/flight-on-time3.jpg",
+      "assets/img/flight-on-time4.jpg"
     ],
     "descripcionCorta": "Sistema colaborativo de prediccion de vuelos con persistencia en PostgreSQL, migraciones con Flyway y desacoplamiento con Arquitectura Hexagonal.",
     "descripcionCompleta": "Proyecto colaborativo internacional desarrollado en el programa Oracle ONE - Alura Latam junto a un equipo distribuido panlatam (Colombia, Argentina, Mexico, Peru y Chile). Como responsable del modulo Backend, lidere la concepcion tecnica de la API central encargada de procesar las consultas de vuelos, evaluar modelos predictivos y persistir los historicos operativos.",
     "caracteristicasClave": [
       "Construccion del nucleo del backend del sistema predictivo utilizando Spring Boot, Spring Security y Spring Data JPA.",
-      "Diseno e implementacion de la capa de persistencia sobre PostgreSQL, integrando Flyway para mantener un control de versiones riguroso y determinista del esquema de base de datos.",
-      "Aplicacion de Arquitectura Hexagonal desacoplando reglas de negocio mediante el uso estrategico de Data Transfer Objects (DTOs), Mappers y Value Objects.",
-      "Gestion de flujos de trabajo colaborativos en Git y GitHub: revision tecnica de Pull Requests (code review), administracion de ramas de feature y resolucion de conflictos en equipo multicultural."
+      "Diseno e implementacion de la capa de persistencia sobre PostgreSQL, integrando Flyway para mantener un control de versiones riguroso y determinista del esquema.",
+      "Aplicacion de Arquitectura Hexagonal desacoplando reglas de negocio mediante el uso estrategico de DTOs, Mappers y Value Objects.",
+      "Gestion de flujos colaborativos en Git y GitHub: code review, ramas de feature y resolucion de conflictos en equipo multicultural."
     ],
     "stack": [
       "Java", "Spring Boot", "Spring Security", "Spring Data JPA",
